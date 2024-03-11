@@ -1,0 +1,55 @@
+Default potential family: 'PBE.54'
+resources: {'num_machines': 1, 'num_mpiprocs_per_machine': 40}
+account: zqm@cpu
+max_wallclock_seconds: 7200
+qos: qos_cpu-dev
+queue_name: 
+custom_scheduler_commands: #SBATCH --hint=nomultithread
+#SBATCH --cpus-per-task=1
+target nb of bands set to 9 (1 empty bands).
+target nb of extra bands is 1.0
+Trying to find an optimum number of tasks per node between 14 and 20 to obtain number of bands between 9 and 10 (1 to 2 empty bands).
+Trying nb_of_tasks_per_node = 20 (20 cpus):
+20 bands and 12 empty bands for 16 valence electrons.
+Best compromise so far.
+Decreasing nb_of_tasks_per_node to 19.
+Trying nb_of_tasks_per_node = 19 (19 cpus):
+19 bands and 11 empty bands for 16 valence electrons.
+Best compromise so far.
+Decreasing nb_of_tasks_per_node to 18.
+Trying nb_of_tasks_per_node = 18 (18 cpus):
+18 bands and 10 empty bands for 16 valence electrons.
+Best compromise so far.
+Decreasing nb_of_tasks_per_node to 17.
+Trying nb_of_tasks_per_node = 17 (17 cpus):
+17 bands and 9 empty bands for 16 valence electrons.
+Best compromise so far.
+Decreasing nb_of_tasks_per_node to 16.
+Trying nb_of_tasks_per_node = 16 (16 cpus):
+16 bands and 8 empty bands for 16 valence electrons.
+Best compromise so far.
+Decreasing nb_of_tasks_per_node to 15.
+Trying nb_of_tasks_per_node = 15 (15 cpus):
+15 bands and 7 empty bands for 16 valence electrons.
+Best compromise so far.
+Decreasing nb_of_tasks_per_node to 14.
+Trying nb_of_tasks_per_node = 14 (14 cpus):
+14 bands and 6 empty bands for 16 valence electrons.
+No good value found. Retrieving best compromise: 
+nb_of_tasks_per_node = 15 (15 cpus) -> 14 bands, including 6 empty bands.
+
+****************************************************************************************************
+Ready to submit VaspWorkChain workchain with inputs:
+****************************************************************************************************
+code: Remote code 'vasp-5.4.4' on jean-zay pk: 2, uuid: 2f2d5ea7-4e02-48c9-8857-f9a53b1c28a5
+structure: uuid: f0f2d961-cf0d-4503-877a-67351acab95d (unstored)
+kpoints: ([8, 8, 8], [0.0, 0.0, 0.0])
+parameters: {'incar': {'SYSTEM': 'Si4 NMR calculation', 'GGA': 'PE', 'ENCUT': 368.0, 'NSW': 0, 'ISYM': 0, 'EDIFF': 1e-07, 'ALGO': 'Normal', 'ISMEAR': 0, 'SIGMA': 0.05, 'LREAL': False, 'PREC': 'Accurate', 'LEFG': True, 'QUAD_EFG': [1.0], 'NELM': 100, 'LCHIMAG': True, 'DQ': 0.001, 'ICHIBARE': 1, 'LNMR_SYM_RED': False, 'NLSPLINE': False, 'NBANDS': 8, 'NCORE': 1}}
+potential_family: PBE.54
+potential_mapping: {'Si': 'Si'}
+options: {'resources': {'num_machines': 1, 'num_mpiprocs_per_machine': 15}, 'account': 'zqm@cpu', 'max_wallclock_seconds': 7200, 'qos': 'qos_cpu-dev', 'queue_name': '', 'custom_scheduler_commands': '#SBATCH --hint=nomultithread\n#SBATCH --cpus-per-task=1'}
+settings: {'parser_settings': {'output_params': ['total_energies'], 'add_maximum_stress': False, 'add_forces': True}}
+verbose: True
+clean_workdir: True
+****************************************************************************************************
+Process VaspWorkChain<6463> submitted with function build_and_submit_nmr() on Si4 structure 6453.

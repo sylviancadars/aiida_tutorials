@@ -1,0 +1,123 @@
+
+Existence of a bond between two atoms i (α) and j (β)
+if the two following conditions are verified:
+    1) Dij < first minimum of the total RDF ( 2.1600000, Å )
+    2) Dij < rcut(α,β)\n
+
+Averaged coordination number (total) for Si:     3.204281
+Averaged coordination number Si-Si (Rcut[α,β]=  1.0000000):   0.000000 or   0.00%
+Averaged coordination number Si-H  (Rcut[α,β]=  1.6500000):   0.125000 or   3.90%
+Averaged coordination number Si-C  (Rcut[α,β]=  2.1600000):   1.088500 or  33.97%
+Averaged coordination number Si-N  (Rcut[α,β]=  2.1300000):   1.990781 or  62.13%
+
+Averaged coordination number (total) for H :     1.000000
+Averaged coordination number H -Si (Rcut[α,β]=  1.6500000):   0.210526 or  21.05%
+Averaged coordination number H -H  (Rcut[α,β]=  1.0000000):   0.000000 or   0.00%
+Averaged coordination number H -C  (Rcut[α,β]=  1.2500000):   0.447368 or  44.74%
+Averaged coordination number H -N  (Rcut[α,β]=  1.1800000):   0.342105 or  34.21%
+
+Averaged coordination number (total) for C :     3.432800
+Averaged coordination number C -Si (Rcut[α,β]=  2.1600000):   1.393280 or  40.59%
+Averaged coordination number C -H  (Rcut[α,β]=  1.2500000):   0.340000 or   9.90%
+Averaged coordination number C -C  (Rcut[α,β]=  1.8000000):   1.600000 or  46.61%
+Averaged coordination number C -N  (Rcut[α,β]=  1.7100000):   0.099520 or   2.90%
+
+Averaged coordination number (total) for N :     3.028875
+Averaged coordination number N -Si (Rcut[α,β]=  2.1300000):   2.654375 or  87.64%
+Averaged coordination number N -H  (Rcut[α,β]=  1.1800000):   0.270833 or   8.94%
+Averaged coordination number N -C  (Rcut[α,β]=  1.7100000):   0.103667 or   3.42%
+Averaged coordination number N -N  (Rcut[α,β]=  1.0000000):   0.000000 or   0.00%
+
+Local structural environments = f(Rcut[α,β]):
+
+Configurations for the Si atom:
+
+  Si H  C  N 
+
+  0  0  1  3          5.99 +/-     0.08          9.37% +/-     0.12%
+  0  0  0  3          6.00 +/-     0.00          9.38% +/-     0.00%
+  0  0  0  4          5.00 +/-     0.00          7.81% +/-     0.00%
+  0  0  2  1          3.74 +/-     0.44          5.85% +/-     0.68%
+  0  0  1  2         11.01 +/-     0.08         17.20% +/-     0.12%
+  0  0  1  1          2.22 +/-     0.49          3.48% +/-     0.76%
+  0  0  0  2          4.00 +/-     0.00          6.25% +/-     0.00%
+  0  0  2  2          7.00 +/-     0.00         10.94% +/-     0.00%
+  0  0  0  0          1.00 +/-     0.00          1.56% +/-     0.00%
+  0  1  1  2          2.00 +/-     0.06          3.12% +/-     0.10%
+  0  0  1  0          2.05 +/-     0.21          3.20% +/-     0.33%
+  0  0  2  0          1.95 +/-     0.21          3.05% +/-     0.33%
+  0  0  3  0          2.00 +/-     0.00          3.12% +/-     0.00%
+  0  0  3  1          4.00 +/-     0.00          6.25% +/-     0.00%
+  0  1  0  3          3.58 +/-     0.49          5.59% +/-     0.77%
+  0  1  2  1          1.00 +/-     0.00          1.56% +/-     0.00%
+  0  1  1  0          1.00 +/-     0.00          1.56% +/-     0.00%
+  0  1  0  4          0.42 +/-     0.49          0.66% +/-     0.77%
+  0  1  1  1          0.00 +/-     0.06          0.01% +/-     0.10%
+  0  0  0  1          0.03 +/-     0.18          0.05% +/-     0.28%
+
+Edge/Corner-Sharing links ratio:
+With the N  atom:
+Edge-Sharing  :   0.00     sigma=  0.000000  so   0.00% sigma=  0.000000
+Corner-Sharing:   2.00     sigma=  0.000000  so 100.00% sigma=  0.000000
+
+Number of tetrahedra:   5.000000 sigma=  0.000000
+Corner-sharing tetrahedra:     5.000000 and edge-sharing tetrahedra:   0.000000
+Which gives Td(CS): 100.00 %  and Td(ES):   0.00 %
+
+
+Configurations for the H  atom:
+
+  Si H  C  N 
+
+  0  0  1  0         17.00 +/-     0.00         44.74% +/-     0.00%
+  1  0  0  0          8.00 +/-     0.00         21.05% +/-     0.00%
+  0  0  0  1         13.00 +/-     0.00         34.21% +/-     0.00%
+
+
+
+Configurations for the C  atom:
+
+  Si H  C  N 
+
+  3  1  0  0          1.00 +/-     0.00          2.00% +/-     0.00%
+  1  2  1  0          3.00 +/-     0.00          6.00% +/-     0.00%
+  2  0  2  0          2.95 +/-     0.21          5.90% +/-     0.43%
+  2  0  1  0          7.00 +/-     0.00         14.00% +/-     0.00%
+  1  0  2  0         10.05 +/-     0.21         20.10% +/-     0.43%
+  0  0  3  0          6.00 +/-     0.00         12.00% +/-     0.00%
+  2  1  1  0          4.71 +/-     0.45          9.42% +/-     0.91%
+  1  1  1  0          1.29 +/-     0.45          2.58% +/-     0.91%
+  3  0  1  0          2.00 +/-     0.00          4.00% +/-     0.00%
+  0  0  2  1          1.00 +/-     0.00          2.00% +/-     0.00%
+  1  0  1  1          3.00 +/-     0.00          6.00% +/-     0.00%
+  1  1  2  0          2.00 +/-     0.00          4.00% +/-     0.00%
+  0  1  3  0          1.00 +/-     0.00          2.00% +/-     0.00%
+  0  0  4  0          1.00 +/-     0.00          2.00% +/-     0.00%
+  0  1  2  1          0.98 +/-     0.15          1.95% +/-     0.31%
+  4  0  0  0          3.00 +/-     0.00          6.00% +/-     0.00%
+  0  1  2  0          0.02 +/-     0.15          0.05% +/-     0.31%
+
+
+Number of tetrahedra:   3.000000 sigma=  0.000000
+Corner-sharing tetrahedra:     3.000000 and edge-sharing tetrahedra:   0.000000
+Which gives Td(CS): 100.00 %  and Td(ES):   0.00 %
+
+
+Configurations for the N  atom:
+
+  Si H  C  N 
+
+  3  0  0  0         29.54 +/-     0.53         61.55% +/-     1.11%
+  2  1  0  0         11.03 +/-     0.17         22.98% +/-     0.36%
+  2  0  0  0          1.02 +/-     0.13          2.12% +/-     0.28%
+  2  1  1  0          0.97 +/-     0.17          2.02% +/-     0.34%
+  2  0  1  0          4.00 +/-     0.00          8.33% +/-     0.00%
+  3  1  0  0          0.99 +/-     0.08          2.07% +/-     0.16%
+  4  0  0  0          0.44 +/-     0.50          0.91% +/-     1.03%
+  1  1  1  0          0.00 +/-     0.06          0.01% +/-     0.13%
+
+
+Number of tetrahedra:   0.438000 sigma=  0.496638
+Corner-sharing tetrahedra:     0.438000 and edge-sharing tetrahedra:   0.000000
+Which gives Td(CS): 100.00 %  and Td(ES):   0.00 %
+

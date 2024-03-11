@@ -1,0 +1,10 @@
+---
+label: "curta"
+hostname: "curta.mcia.fr"
+description: "CURTA machine at Mesocentre Aquitain de Calcul Intensif (MCIA)"
+transport: core.ssh
+scheduler: core.slurm
+work_dir: "/scratch/{username}/aiida/"
+mpirun_command: "mpirun -np {tot_num_mpiprocs}"
+mpiprocs_per_machine: "32"
+

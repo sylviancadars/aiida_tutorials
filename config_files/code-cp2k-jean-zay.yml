@@ -1,0 +1,13 @@
+---
+label: "cp2k-6.1"
+description: "CP2K Open Source Molecular Dynamics version 6.1 configured for Jean-Zay at IDRIS"
+default_calc_job_plugin: "cp2k"
+filepath_executable: "/gpfslocalsup/spack_soft/cp2k/6.1/intel-19.0.4-2che3reso4wbexi7dfjaaqfmtyzu3l7q/bin/cp2k.popt"
+computer: "jean-zay"
+prepend_text: |
+    ulimit -s unlimited
+    module purge
+    module load intel-compilers/19.0.4
+    module load intel-mpi/19.0.4
+    module load cp2k/6.1-mpi-popt
+append_text: " "

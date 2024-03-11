@@ -1,0 +1,208 @@
+**********************************
+TUTORIAL OUTLINE
+**********************************
+
+1. Installation of AiiDA latest version:
+	-> Chose Mamba installation (recommended)
+ 	-> including profile configuration
+	-> manipulate data: structures, groups, and others ,queries
+
+2. Configure computers:
+	-> localhost
+	-> curta
+	-> 
+
+3. Install plugins:
+	-> aiida-vasp
+	-> aiida-cp2k
+	-> aiida
+
+3. Configure codes:
+	-> vasp
+	-> cp2k
+	-> quantum espresso
+
+4. Configure potential families
+	-> for vasp
+	-> for cp2k: No. Set from files (see examples)
+	-> for quantum espresso.
+
+5. Run tests
+	-> cp2k:
+		* aiida-cp2k examples
+		* Fabien SiCN MD
+	-> qe:
+		* Documentation "run via python API" example: Si.
+	-> vasp:
+		* relaxation
+		* NMR
+
+**********************************
+TUTORIAL DETAILS
+**********************************
+
+Install aiida core:
+Choose Conda/Mamba install:
+https://aiida.readthedocs.io/projects/aiida-core/en/latest/intro/install_conda.html#intro-get-started-conda-install
+
+conda install -c conda-forge mamba
+mamba create -n aiida -c conda-forge aiida-core aiida-core.services
+mamba activate aiida
+
+Choose a database cluster folder that will contain posgreSQL database configuration: e.g. $HOME/aiida/aiida_psql_clusters
+
+initdb -D $HOME/aiida/aiida_psql_clusters/aiida-psql_vX.XX_YYYY-MM-DD
+pg_ctl -D $HOME/aiida/aiida_psql_clusters/aiida-psql_vX.XX_YYYY-MM-DD -l $HOME/aiida/aiida_psql_clusters/logfile start
+
+	IMPORTANT NOTE: frequent source of server error (unavailable port):
+	postgres program running under user nme postgres may need to be killed before starting server:
+	ps -ef | grep postgres
+	sudo kill process
+
+Database hierarchy:
+- 1 AiiDA version -> 1 cluster folder (-D name) -> 1 server program (postgres) running in the background
+	|-- project_1 -> 1 aiida profile = 1 database
+        |-- project_1 -> 1 aiida profile = 1 database
+
+Use aiida in Jupyter notebooks:
+https://aiida.readthedocs.io/projects/aiida-core/en/latest/intro/installation.html#using-aiida-in-jupyter
+pip install aiida[notebook]
+
+----------------------------
+Manipulate data (using verdi shell or jupyter notebook)
+----------------------------
+structures: (from aiida.orm import StructureData)
+        -> from pymatgen (from cif, materials project database
+		from pymatgen.core.structure import Structure
+		pmg_struct = Structure.from_file(filename=)
+		aiida_struct = StructureData(pymatgen=pmg_struct)
+	-> from ase
+		from ase.io import read()
+		ase_atoms = read(file)
+		aiida_struct = StructureData(ase=ase_atoms
+        -> visualize, explore (e.g. make supercell, perturb)
+		verdi data core.structure list
+		verdi data core.structure show STRUCTURE_PK
+
+groups: (from aiida.orm import Group)
+        -> create a group of structures
+		group=Group(label=LABEL)
+		group.store()
+		group.add_nodes(LIST_OF_STRUCTURES)
+
+other aiida.orm data types: Int, Float, Dict, ArrayData, etc.
+
+Queries: (from aiida.orm import QueryBuilder)
+	cat TUORIAL_FOLDER/scripts-examples/list_structures_in_database.py
+
+----------------------------
+Install aiida plugins:
+----------------------------
+verdi daemon stop
+pip install aiida-vasp
+pip install quantum-espresso
+pip install aiida-cp2k
+
+-----------------------------
+Install and use aiida_utils (by Sylvian Cadars)
+-----------------------------
+cd AIIDA_UTILS_LOCATION
+git clone git@github.com:sylviancadars/aiida_utils.git
+update python path in conda environment:
+Add the following line to you virtual environment activation script: $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+
+export PYTHONPATH=$PYTHONPATH:AIIDA_UTILS_LOCATION/aiida_utils
+
+If you have a Materials Studio Rest API key you may also define it here as an environment variable using:
+export MP_API_KEY='My_MP_API_KEY' 
+See: https://legacy.materialsproject.org/open
+
+Configure keys (see: https://aiida.readthedocs.io/projects/aiida-core/en/latest/howto/ssh.html)
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/aiida
+ssh-copy-id -i ~/.ssh/aiida YOURUSERNAME@YOURCLUSTERADDRESS
+ssh-add ~/.ssh/aiida
+# Set-up ssh agent (see documentation above) -> edit load-singlesshagent.sh agent and copy in bin folder
+
+
+Set up computers (see: https://aiida.readthedocs.io/projects/aiida-core/en/latest/howto/run_codes.html#how-to-set-up-a-computer)
+verdi computer setup --config TUTORIAL_FOLDER/config_files/computer-jean-zay.yml
+verdi computer configure core.ssh jean-zay   # CHANGE LOGIN
+verdi computer test jean-zay
+# Change default memory -> TRY TO SET IT TO NONE IN CONFIG FILE.
+verdi shell
+	computer = load_computer('jean-zay')
+	computer.set_default_memory_per_machine(None)
+
+verdi computer setup --config TUTORIAL_FOLDER/config_files/computer-curta.yml
+verdi computer configure core.ssh curta    # CHANGE LOGIN IF NECESSARY
+verdi computer test curta
+
+Set up codes:
+verdi code create core.code.installed --config TUTORIAL_FOLDER/config_files/code-cp2k-jean-zay.yml
+verdi code create core.code.installed --config TUTORIAL_FOLDER/config_files/code-qe-6.5-pw-jean-zay.yml
+
+-------------------------
+CP2K tests:
+-------------------------
+pip install cp2k
+
+See documentation:
+https://aiida-cp2k.readthedocs.io/en/latest
+Examples may all be found in the plugin source code, available from github:
+https://github.com/aiidateam/aiida-cp2k
+-----------------------
+* aiida-cp2k examples:
+cd TUTORIAL_FOLDER/cp2k-examples/aiida-cp2k-plugin-examples/workchains
+# Edit code metadata options
+     builder.cp2k.metadata.options = {
+         "resources": {
+             "num_machines": 1,
+             "num_mpiprocs_per_machine": 1,
+         },
+         "max_wallclock_seconds": 1 * 10 * 60,
+         "account": "zqm@cpu",
+         "qos": "qos_cpu-dev",
+
+     }
+
+
+verdi code list
+verdi run example_base_energy_restart.py cp2k-6.1@jean-zay
+verdi process list
+verdi process show PROCESS_PK
+verdi data core.remote show REMOTE_FOLDER_PK 
+# log to remote computer and copy-paste remote folder path
+ssh REMOTE_MACHINE
+cd PATH_TO_REMOTE_FOLDER
+verdi data core.dict show OUTPUT_PARAMATERS_PK
+
+* Fabien SiCN MD:
+# Unpack archive
+bunzip2 -k confs_Fabien.tar.bz2
+tar -xvf confs_Fabien.tar
+
+# Convert input file to running script
+# 	Make sure Potentials and Basis set files are properly set according to HPC.
+fromcp2k -f aiida-cp2k-calc input_300K.in > aiida-cp2k_script.py
+# -> Look for Potentials and Basis set files in parameters dict.
+
+------------------
+aiida-quantumespresso tests
+------------------
+See documentation on aiida-quantumespresso github for installation
+
+verdi daemon stop
+pip install aiida-quantum-espresso
+# Add the following environment variable to file: $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+eval "$(_AIIDA_QUANTUMESPRESSO_COMPLETE=source aiida-quantumespresso)"
+
+# Configure peudopotentials:
+aiida-pseudo install sssp
+aiida-pseudo list
+# Use the pseudo-dojo pseudopotentials repository (http://www.pseudo-dojo.org/)
+aiida-pseudo install pseudo-dojo -v 0.5 -f upf
+# Here we use the default PBE xc functional and scalar relativistic effects.
+
+# Run aiida-quantum espresso calculations through the python API:
+https://aiida-quantumespresso.readthedocs.io/en/latest/tutorials/first_pw.html#running-a-pw-x-calculation-through-the-api
+

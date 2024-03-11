@@ -1,0 +1,3 @@
+Structure uuid: ee47e61f-86d9-4b5b-b9ff-db24e6fc9e8e (unstored) of composition Mg8O16Si4 obtained from file /home/cadarp02/aiida_projects/tutorials-ircer/structure-files/Mg2SiO4_mp-2895.cif
+Calculation: <class 'aiida_quantumespresso.calculations.pw.PwCalculation'><968> finished [0]
+Results: {'output_band': <BandsData: uuid: e7f885a7-18fa-4791-8527-5a31e1cd650c (pk: 971)>, 'output_trajectory': <TrajectoryData: uuid: 22f56c91-879c-4080-8bbb-64e308b1133b (pk: 972)>, 'output_parameters': <Dict: uuid: 0c4164c3-eb93-4cee-987f-39d1ca36c297 (pk: 973)>, 'remote_folder': <RemoteData: uuid: e30fc9f8-c985-49cb-82ff-2bbbf54d1347 (pk: 969)>, 'retrieved': <FolderData: uuid: f24e67fe-a1a4-4e8c-977c-bb07dfd2df0e (pk: 970)>}

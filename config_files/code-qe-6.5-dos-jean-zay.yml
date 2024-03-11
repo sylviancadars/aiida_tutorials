@@ -1,0 +1,13 @@
+---
+label: "qe-6.5-dos"
+description: "Quantum espresso open source DFT code version 6.5, dos.x executable, configured for jean-zay.idris.fr"
+default_calc_job_plugin: "quantumespresso.dos"
+filepath_executable: "/gpfslocalsup/spack_soft/quantum-espresso/6.5/intel-19.0.5-4hpk7cndidwkedta7rc5lci7aninar6i/bin/dos.x"
+computer: "jean-zay"
+prepend_text: |
+    ulimit -s unlimited
+    module purge
+    module load intel-compilers/19.0.5
+    module load intel-mpi/2019.5
+    module load quantum-espresso/6.5-mpi
+append_text: " "

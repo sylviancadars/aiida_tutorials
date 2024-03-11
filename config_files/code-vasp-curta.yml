@@ -1,0 +1,9 @@
+---
+label: "vasp-5.4.4"
+description: "VASP version 5.4.4 configured for CURTA"
+default_calc_job_plugin: "vasp.vasp"
+filepath_executable: "/gpfs/home/ircer/VASP/bin/vasp_std"
+computer: "curta"
+prepend_text: |
+   module load mpi/intel/2018.5.274 compiler/intel/2018.5.274
+append_text: " "

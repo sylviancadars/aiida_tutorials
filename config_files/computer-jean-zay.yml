@@ -1,0 +1,10 @@
+---
+label: "jean-zay"
+description: 'Jean-Zay machine at IDRIS HPC center'
+hostname: "jean-zay.idris.fr"
+transport: core.ssh
+scheduler: core.slurm
+work_dir: "/gpfsscratch/rech/def/{username}/aiida/"
+mpirun_command: "srun -n {tot_num_mpiprocs}"
+mpiprocs_per_machine: "40"
+

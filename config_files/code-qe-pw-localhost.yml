@@ -1,0 +1,8 @@
+---
+label: 'qe-pw'
+description: 'quantum_espresso v6.???'
+default_calc_job_plugin: 'quantumespresso.pw'
+filepath_executable: '/usr/bin/pw.x'
+computer: 'localhost'
+prepend_text: ' '
+append_text: ' '

@@ -1,0 +1,65 @@
+/**********************************************************************************************************
+*                                     RINGS V1.3 GLOBAL OUTPUT FILE                                       *
+**********************************************************************************************************/
+System Name:                    SiCNH          
+
+Number of MD steps:            500
+Number of atoms:                200
+
+Direct lattice parameters
+Lattice Vector:                    13.1700000   0.0000000   0.0000000
+Lattice Vector:                     0.0000000  13.1700000   0.0000000
+Lattice Vector:                     0.0000000   0.0000000  13.1700000
+Lattice Angles:          Alpha=  90.000, Beta=  90.000 and Gamma=  90.000
+
+Reciprocal lattice parameters
+Lattice Vector:                     0.4770832   0.0000000   0.0000000
+Lattice Vector:                     0.0000000   0.4770832   0.0000000
+Lattice Vector:                     0.0000000   0.0000000   0.4770832
+
+
+Periodic Boundary Conditions applied during the calculation
+
+Volume=  2284.3220 Angstrom^3   and real density=     2.2601 g/cm^3
+
+Number of Species =  4
+
+Number density of atom  1/Si =  0.028017 At/Ang^3 with Number of atoms =  64
+Number density of atom  2/H  =  0.016635 At/Ang^3 with Number of atoms =  38
+Number density of atom  3/C  =  0.021888 At/Ang^3 with Number of atoms =  50
+Number density of atom  4/N  =  0.021013 At/Ang^3 with Number of atoms =  48
+
+Computed empirical formula :          Si32   H 19   C 25   N 24   
+
+Atomic species parameters used in the calculation:
+For atom Si: 
+     Neutron scattering length =   4.153 fm
+     X-rays scattering length =  14.000 e.u.
+     Atomic mass       =  28.090 g/mol
+     Radius (COV)      =   1.110 Angstrom 
+For atom H : 
+     Neutron scattering length =  -3.739 fm
+     X-rays scattering length =   1.000 e.u.
+     Atomic mass       =   1.010 g/mol
+     Radius (COV)      =   0.310 Angstrom 
+For atom C : 
+     Neutron scattering length =   6.646 fm
+     X-rays scattering length =   6.000 e.u.
+     Atomic mass       =  12.010 g/mol
+     Radius (COV)      =   0.760 Angstrom 
+For atom N : 
+     Neutron scattering length =   9.360 fm
+     X-rays scattering length =   7.000 e.u.
+     Atomic mass       =  14.010 g/mol
+     Radius (COV)      =   0.710 Angstrom 
+
+Computation options:
+
+  =>  Bonding properties have been calculated
+      including edge/corner sharing statistics and tetrahedra ratio 
+output files are located in the new 'bonds' directory
+
+
+/**********************************************************************************************************
+*                                 RINGS V1.3 END OF GLOBAL OUTPUT FILE                                    *
+**********************************************************************************************************/

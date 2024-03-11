@@ -1,0 +1,16 @@
+---------------------------  --------------------------------------------------------------
+Label                        curta
+PK                           3
+UUID                         ec7b0980-11d2-41a1-871f-88f5eb62c7ca
+Description                  CURTA machine at Mesocentre Aquitain de Calcul Intensif (MCIA)
+Hostname                     curta.mcia.fr
+Transport type               core.ssh
+Scheduler type               core.slurm
+Work directory               /scratch/{username}/aiida/
+Shebang                      #!/bin/bash
+Mpirun command               mpirun -np {tot_num_mpiprocs}
+Default #procs/machine       32
+Default memory (kB)/machine  1000000
+Prepend text
+Append text
+---------------------------  --------------------------------------------------------------

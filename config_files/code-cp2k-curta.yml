@@ -1,0 +1,15 @@
+---
+label: "cp2k-6.1"
+description: "CP2K Open Source Molecular Dynamics version 6.1 configured for CURTA"
+default_calc_job_plugin: "cp2k"
+filepath_executable: "/gpfs/home/scadars/CP2K/CP2K6.1/cp2k.popt"
+computer: "curta"
+prepend_text: |
+  module load compiler/intel/2019.3.199
+  module load mpi/intel/2019.3.199
+  module load fftw3_mpi/3.3.8/impi_2019.3.199/intel_2019.3.199
+  module load lapack/3.8.0
+  module load scalapack/2.0.2
+  module load blas/3.8.0
+append_text: " "
+

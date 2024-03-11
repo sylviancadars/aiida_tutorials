@@ -1,0 +1,4 @@
+For CP2K on CURTA, consider using the following executable:
+
+/gpfs/home/ircer/CP2K/cp2k-6.1/exe/Linux-x86-64-intel/cp2k.popt
+

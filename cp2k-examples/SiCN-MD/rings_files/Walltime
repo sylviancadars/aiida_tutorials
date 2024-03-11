@@ -1,0 +1,17 @@
+
+     Started on 27/02/2024 at 09:17:34 MET +01:00 from GMT
+
+------------------------ WallTime by Subroutine -----------------------
+
+             Subroutine             |      Time (s)       |     %age
+-----------------------------------------------------------------------
+
+ Total time for the calculation     |               0.45  |    100.00
+
+ Main                               |               0.00  |      0.00
+ Lattice                            |               0.00  |      0.00
+ Chemistry                          |               0.02  |      5.29
+ Bond Properties                    |               0.43  |     94.71
+-----------------------------------------------------------------------
+
+     Stopped on 27/02/2024 at 09:17:35 MET +01:00 from GMT

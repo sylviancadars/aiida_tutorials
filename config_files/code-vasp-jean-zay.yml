@@ -1,0 +1,11 @@
+---
+label: "vasp-5.4.4"
+description: "VASP version 5.4.4 configured for jean-zay.idris.fr"
+default_calc_job_plugin: "vasp.vasp"
+filepath_executable:  "/gpfslocalsup/spack_soft/vasp/5.4.4/intel-19.0.4-dj3krhciamn2e5ygcxrvfqive3cq3mv5/bin/vasp_std"
+computer: "jean-zay"
+prepend_text: |
+    module purge
+    module load vasp/5.4.4-mpi-cuda
+append_text: " "
+
